@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\OeuvreController;
+use App\Http\Controllers\SalleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,4 @@ Route::put('/commentaires/valider/{id}', [CommentaireController::class, 'valider
 
 Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
 Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
+Route::get('/salle/{id}', [SalleController::class, 'store'])->whereNumber('id')->name('salle.show');
