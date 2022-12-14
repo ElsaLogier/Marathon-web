@@ -17,7 +17,7 @@
     <ul>
         @forelse($oeuvres as $oeuvre)
             <li>
-                {{ $oeuvre->nom }} par {{ $oeuvre->auteur }}.
+                {{ $oeuvre->nom }} par <a href="?auteur={{$oeuvre->auteur}}">{{ $oeuvre->auteur }}</a>.
             </li>
         @empty
             <li>
