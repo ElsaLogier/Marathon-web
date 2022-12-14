@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OeuvreController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,6 @@ Route::get('/home', function () {
     return view('home');
 })->middleware(['auth'])->name('home');
 
+Route::resource('/oeuvres', OeuvreController::class);
 Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
 Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
