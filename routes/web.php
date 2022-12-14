@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\OeuvreController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,5 @@ Route::get('/home', function () {
 Route::resource('/oeuvres', OeuvreController::class);
 Route::resource('/commentaires', CommentaireController::class)->middleware(['auth', 'verified']);
 
+Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
+Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
