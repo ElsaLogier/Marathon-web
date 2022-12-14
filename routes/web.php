@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\OeuvreController;
+use App\Http\Controllers\SalleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,9 @@ Route::get('/home', function () {
 
 Route::resource('/oeuvres', OeuvreController::class);
 Route::resource('/commentaires', CommentaireController::class)->middleware(['auth', 'verified']);
+Route::resource('/likes', LikeController::class);
+Route::put('/commentaires/valider/{id}', [CommentaireController::class, 'valider'])->name('commentaires.valider');
 
 Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
 Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
+Route::get('/salle/{id}', [SalleController::class, 'store'])->whereNumber('id')->name('salle.show');
