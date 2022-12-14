@@ -8,6 +8,7 @@
     <p>liké {{count($oeuvre->likes)}} fois.</p>
     @auth
         @if(Auth::user()->likes->contains($oeuvre))
+            <b><p>Vous avez liké cette oeuvre </p></b>
             <form method="post" action=" {{ route('likes.destroy', $oeuvre->id) }}">
                 @csrf
                 @method('DELETE')
