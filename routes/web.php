@@ -29,4 +29,5 @@ Route::get('/home', function () {
 Route::resource('/oeuvres', OeuvreController::class);
 Route::resource('/commentaires', CommentaireController::class)->middleware(['auth', 'verified']);
 Route::resource('/likes', LikeController::class);
+Route::put('/commentaires/valider/{id}', [CommentaireController::class, 'valider'])->name('commentaires.valider');
 

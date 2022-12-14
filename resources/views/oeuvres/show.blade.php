@@ -21,11 +21,27 @@
             </form>
         @endif
     @endauth
+
     {!! $oeuvre->description !!}
     @foreach($oeuvre->commentaires as $com)
-        <hr>
-        <h3>{{$com->titre}}</h3>
-        <p>le {{date_format($com->created_at, 'd/m/Y')}}</p>
-        <p>{!! $com->contenu !!}</p>
+        @if($com->valide || (Auth::user() != null && Auth::user()->admin))
+            <hr>
+            <h3>{{$com->titre}}
+            @if(Auth::user() != null && Auth::user()->admin)
+                <form method="post" action="{{ route('commentaires.valider', $com->id) }}">
+                    @csrf
+                    @method('put')
+                    <button>valider</button>
+                </form>
+                <form method="post" action="{{ route('commentaires.destroy', $com->id) }}">
+                    @csrf
+                    @method('delete')
+                    <button>refuser</button>
+                </form>
+            @endif
+            </h3>
+            <p>le {{date_format($com->created_at, 'd/m/Y')}}</p>
+            <p>{!! $com->contenu !!}</p>
+        @endif
     @endforeach
 @endsection
