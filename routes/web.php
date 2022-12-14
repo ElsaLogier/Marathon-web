@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\OeuvreController;
+use App\Http\Controllers\SalleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,4 @@ Route::resource('/commentaires', CommentaireController::class)->middleware(['aut
 
 Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
 Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
+Route::get('/salle/{id}', [SalleController::class, 'store'])->whereNumber('id')->name('salle.show');
