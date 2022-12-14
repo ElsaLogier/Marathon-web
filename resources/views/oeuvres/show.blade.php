@@ -27,7 +27,7 @@
         @if($com->valide || (Auth::user() != null && Auth::user()->admin))
             <hr>
             <h3>{{$com->titre}}
-            @if(Auth::user() != null && Auth::user()->admin)
+            @if(Auth::user() != null && Auth::user()->admin && !$com->valide)
                 <form method="post" action="{{ route('commentaires.valider', $com->id) }}">
                     @csrf
                     @method('put')
