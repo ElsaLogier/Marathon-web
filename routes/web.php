@@ -35,4 +35,4 @@ Route::put('/commentaires/valider/{id}', [CommentaireController::class, 'valider
 
 Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
 Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
-Route::get('/salle/{id}', [SalleController::class, 'store'])->whereNumber('id')->name('salle.show');
+Route::get('/salle/{id}', [SalleController::class, 'show'])->whereNumber('id')->name('salle.show');
