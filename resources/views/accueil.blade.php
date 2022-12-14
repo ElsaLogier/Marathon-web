@@ -38,6 +38,10 @@
         <img class="oeuvre" src="{{asset('storage/images/oeuvres/oeuvre-5.png')}}" alt="">
     </div>
     <div class="welcome">Bienvenue au musée virtuel !</div>
+    <div>Voici la description de l'exposition. Je suis une description vraiment sympa</div>
+    <button onclick="" >Vers la première salle</button>
+
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Notre Interview</a>
 </div>
 </body>
 </html>

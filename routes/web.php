@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\OeuvreController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,5 @@ Route::resource('/commentaires', CommentaireController::class)->middleware(['aut
 Route::resource('/likes', LikeController::class);
 Route::put('/commentaires/valider/{id}', [CommentaireController::class, 'valider'])->name('commentaires.valider');
 
+Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
+Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
