@@ -23,6 +23,21 @@
     @endauth
 
     {!! $oeuvre->description !!}
+
+    <form method="post" action="{{ route('commentaires.store') }}">
+        @csrf
+        <div>
+            <label for="titre">titre</label>
+            <input type="text" name="titre" placeholder="titre">
+        </div>
+        <div>
+            <label for="titre">contenu</label>
+            <textarea rows="10" cols="20" name="contenu"></textarea>
+        </div>
+        <button name="oeuvre" value="{{$oeuvre->id}}" type="submit">valider</button>
+    </form>
+
+
     @foreach($oeuvre->commentaires as $com)
         @if($com->valide || (Auth::user() != null && Auth::user()->admin))
             <hr>
