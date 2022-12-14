@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\OeuvreController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,5 @@ Route::get('/home', function () {
 })->middleware(['auth'])->name('home');
 
 Route::resource('/oeuvres', OeuvreController::class);
+Route::resource('/commentaires', CommentaireController::class)->middleware(['auth', 'verified']);
+
