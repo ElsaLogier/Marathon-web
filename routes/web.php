@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,6 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth'])->name('home');
+
+Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
+Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
