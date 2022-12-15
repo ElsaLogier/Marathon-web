@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('titre')Home @endsection
+
+@section('vite')@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js']) @endsection
+
 @section('content')
     <img src="{{ asset('storage/'.Auth::user()->avatar) }}" alt="Avatar">
 

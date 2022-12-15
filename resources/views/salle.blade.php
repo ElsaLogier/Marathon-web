@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('titre')Salle {{ $salle->nom }} @endsection
+
+@section('vite')@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js']) @endsection
+
 @section('content')
 
     <p>
@@ -16,7 +20,7 @@
     </p>
     <ul>
         @forelse($oeuvres as $oeuvre)
-            <li>
+            <li id="$oeuvre->id">
                 <a href="{{route('oeuvres.show', $oeuvre->id)}}">{{ $oeuvre->nom }}</a>
                 par <a href="?auteur={{$oeuvre->auteur}}">{{ $oeuvre->auteur }}</a>.
                 <ul>

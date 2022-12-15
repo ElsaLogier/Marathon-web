@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('titre')Accueil @endsection
+
+@section('vite')@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js']) @endsection
+
 @section('content')
 <div class="container">
     <div class="illustration">
