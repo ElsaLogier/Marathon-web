@@ -8,31 +8,31 @@
     <title>Accueil</title>
     <style>
         #ban1:hover {
-            background: url({{ asset('storage'.$salles[0]->plan_url) }}) no-repeat;
+            background: url({{ asset('storage/'.$salles[0]->plan_url) }}) no-repeat;
             background-size: cover;
             color: rgba(245, 235, 224, 1);
         }
 
         #ban2:hover {
-            background: url({{ asset('storage'.$salles[1]->plan_url) }}) no-repeat;
+            background: url({{ asset('storage/'.$salles[1]->plan_url) }}) no-repeat;
             background-size: cover;
             color: rgba(245, 235, 224, 1);
         }
 
         #ban3:hover {
-            background: url({{ asset('storage'.$salles[2]->plan_url) }}) no-repeat;
+            background: url({{ asset('storage/'.$salles[2]->plan_url) }}) no-repeat;
             background-size: cover;
             color: rgba(245, 235, 224, 1);
         }
 
         #ban4:hover {
-            background: url({{ asset('storage'.$salles[3]->plan_url) }}) no-repeat;
+            background: url({{ asset('storage/'.$salles[3]->plan_url) }}) no-repeat;
             background-size: cover;
             color: rgba(245, 235, 224, 1);
         }
 
         #ban5:hover {
-            background: url({{ asset('storage'.$salles[4]->plan_url) }}) no-repeat;
+            background: url({{ asset('storage/'.$salles[4]->plan_url) }}) no-repeat;
             background-size: cover;
             color: rgba(245, 235, 224, 1);
         }
