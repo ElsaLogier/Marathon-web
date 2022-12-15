@@ -10,10 +10,9 @@
 
     <div class="courant">
       <span class="numCourant" id="eltC1">I</span>
-        <span class="nomCourant" id="eltC2">Byzantin<span>
-        <span class="datesCourant" id="eltC3">1912-1919</span>
-        <p id="eltC4">Le cubisme est un mouvement artistique qui a émergé en France au début du XXe siècle. Les artistes cubistes étaient connus pour leur utilisation de formes géométriques et de lignes pour représenter les objets dans leurs peintures, plutôt que de les représenter de manière réaliste. Le cubisme a été l'un des premiers mouvements artistiques à remettre en question les conventions traditionnelles de la peinture, et il a influencé de nombreux artistes à travers le monde. Les peintures cubistes sont souvent considérées comme étant abstraites, mais elles peuvent également être interprétées comme des commentaires sur la société et la culture de l'époque. Si vous êtes intéressé par le cubisme, vous pouvez en découvrir plus en visitant notre exposition en ligne.</p>
-        </div>
+        <span class="nomCourant" id="eltC2">{{ $salle->nom }}<span>
+        {!! $salle->description !!}
+    </div>
 
     {{-- <a id="img1">
       <img src="images/joconde.jpeg" alt="images" >
