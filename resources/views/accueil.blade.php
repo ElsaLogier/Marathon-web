@@ -4,6 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @vite(['resources/scss/app.scss', 'resources/css/acc.css','resources/js/app.js'])
+    <title>Accueil</title>
+  
+    <body>
+        <nav>
+            <ul>
+                @guest
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
+                @else
+                    @if (Auth::user())
+                        <li><a href="/home">Profil</a></li>
+                    @endif
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.
+              getElementById('logout-form').submit();">
+                            Se déconnecter
+                        </a></li>
+                    <form id="logout-form" action="{{ route('logout') }}"
+                          method="POST" style="display: none;"> {{ csrf_field() }}
+                    </form>
+                @endguest  </ul>
+        </nav>
 
     <div class="container" id="container">
 
@@ -63,20 +85,41 @@
             <span class="dateBan">1874-1886</span>
             <span class="nsalleBan">III</span></a>
         </div>
-        <div class="BanCourant" id="ban4">
-            <a href="/salle/4" class="banLink" id="Link4">
-            <span class="courantBan"> Cubisme </span>
-            <span class="dateBan">1874-1886</span>
-            <span class="nsalleBan">IV</span></a>
         </div>
-        <div class="BanCourant" id="ban5">
-            <a href="/salle/5" class="banLink" id="Link5">
-            <span class="courantBan"> Pop Art </span>
-            <span class="dateBan">1874-1886</span>
-            <span class="nsalleBan">V</span></a>
+        <div class="section section-2" id="salles">
+            <div class="BanCourant" id="ban1">
+                <a href="{{ route('salle.show', 1) }}" class="banLink" id="Link1">
+                <img class="banimg" id="imgban1" src=" {{ asset('storage/images/s-l500.png') }}"/>
+                <span class="courantBan"> Byzantin </span>
+                <span class="dateBan">476-1453</span>
+                <span class="nsalleBan">I</span></a>
+            </div>
+            <div class="BanCourant" id="ban2">
+                <a href="{{ route('salle.show', 2) }}" class="banLink" id="Link2">
+                <span class="courantBan"> Estampe<br>Japonaise </span>
+                <span class="dateBan">1603-1868</span>
+                <span class="nsalleBan">II</span></a>
+            </div>
+            <div class="BanCourant" id="ban3">
+                <a href="{{ route('salle.show', 3) }}" class="banLink" id="Link3" >
+                <span class="courantBan"> Impressionisme </span>
+                <span class="dateBan">1874-1886</span>
+                <span class="nsalleBan">III</span></a>
+            </div>
+            <div class="BanCourant" id="ban4">
+                <a href="{{ route('salle.show', 4) }}" class="banLink" id="Link4">
+                <span class="courantBan"> Cubisme </span>
+                <span class="dateBan">1874-1886</span>
+                <span class="nsalleBan">IV</span></a>
+            </div>
+            <div class="BanCourant" id="ban5">
+                <a href="{{ route('salle.show', 5) }}" class="banLink" id="Link5">
+                <span class="courantBan"> Pop Art </span>
+                <span class="dateBan">1874-1886</span>
+                <span class="nsalleBan">V</span></a>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 </html>

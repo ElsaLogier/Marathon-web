@@ -1,23 +1,23 @@
 @font-face {
     font-family: 'crake_regularregular';
-    src: url('fonts/crake_regular-webfont.woff2') format('woff2'),
-        url('fonts/crake_regular-webfont.woff') format('woff');
+    src: url('./fonts/crake_regular-webfont.woff2') format('woff2'),
+        url('./fonts/crake_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'azo_sans';
-    src: url('fonts/AzoSans-Light.woff2') format('woff2'),
-        url('fonts/AzoSans-Light.woff') format('woff');
+    src: url('./fonts/AzoSans-Light.woff2') format('woff2'),
+        url('./fonts/AzoSans-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'blushing_rose';
-    src: url('fonts/blushing_rose-webfont.woff2') format('woff2'),
-        url('fonts/blushing_rose-webfont.woff') format('woff');
+    src: url('./fonts/blushing_rose-webfont.woff2') format('woff2'),
+        url('./fonts/blushing_rose-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -196,7 +196,7 @@ li a {
 }
 
 #ban1:hover {
-    background: url('../../resources/images/thumbnails/illu_1.png') no-repeat;
+    background: url('../images/thumbnails/illu_1.png') no-repeat;
     background-size: cover;
     color: rgba(245, 235, 224, 1);
 }
@@ -206,7 +206,7 @@ li a {
 }
 
 #ban2:hover {
-    background: url('../../resources/images/thumbnails/illu_2.png') no-repeat;
+    background: url('../images/thumbnails/illu_2.png') no-repeat;
     background-size: cover;
     color: rgba(245, 235, 224, 1);
 }
@@ -216,7 +216,7 @@ li a {
 }
 
 #ban3:hover {
-    background: url('../../resources/images/thumbnails/illu_3.png') no-repeat;
+    background: url('../images/thumbnails/illu_3.png') no-repeat;
     background-size: cover;
     color: rgba(245, 235, 224, 1);
 }
@@ -226,7 +226,7 @@ li a {
 }
 
 #ban4:hover {
-    background: url('../../resources/images/thumbnails/illu_4.png') no-repeat;
+    background: url('../images/thumbnails/illu_4.png') no-repeat;
     background-size: cover;
     color: rgba(245, 235, 224, 1);
 }
@@ -236,7 +236,7 @@ li a {
 }
 
 #ban5:hover {
-    background: url('../../resources/images/thumbnails/illu_5.png') no-repeat;
+    background: url('../images/thumbnails/illu_5.png') no-repeat;
     background-size: cover;
     color: rgba(245, 235, 224, 1);
 }
