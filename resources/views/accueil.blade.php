@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@section('titre')Accueil @endsection
+    <div class="container" id="container">
 
-@section('vite')@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js']) @endsection
-
-@section('content')
-<div class="container">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -18,6 +14,7 @@
     @vite(['resources/scss/app.scss','resources/js/app.js','resources/css/acc.css'])
 </head>
 <body>
+
     <nav>
         <ul>
             @guest
