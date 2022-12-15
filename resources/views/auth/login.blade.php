@@ -3,29 +3,24 @@
 @section('content')
 
     @include("_errors")
-<div >
-    <form action="{{route('login')}}" method="post">
+    <a href="{{route('accueil')}}" class="return">Retour à la page principale</a>
+    <div class="login">
+        <h1>Login</h1>
+    <form action="{{route('login')}}" method="post" class="form-example">
         @csrf
-        <div>
-            <h1>Accès musée</h1>
-            <div>
-                Si vous n'avez pas de compte, <a href="{{route('register')}}">vous pouvez en créer un</a>.
+        <div class="form-border">
+            <input type="email" name="email" id="email" placeholder="email">
+            <input type="password" name="password" id="pwd" placeholder="Mot de passe">
+            <div class="form-submit">
+                <input type="submit" value="Submit">
             </div>
         </div>
-        <div>
-            <label for="email">Adresse mail</label>
-            <input type="email" name="email" id="email">
-        </div>
-        <div>
-            <label for="pwd">Mot de passe</label>
-            <input type="password" name="password" id="pwd">
-        </div>
-        <div >
-            <input type="submit" value="Connexion">
-        </div>
     </form>
-    <div>
-        <a href="{{route('accueil')}}">Retour à la page principale</a>
-    </div>
 </div>
+<div class="redirection"><br/>
+    <h3>Vous venez d'arriver ? <a href="{{route('register')}}">ça se passe ici.</a></h3>
+</div>
+@endsection
+
+@section('login')
 @endsection
