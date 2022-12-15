@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="content" id="content">
-
+    <a href=""></a>
     <div class="courant">
       <span class="numCourant" id="eltC1">I</span>
         <span class="nomCourant" id="eltC2">Byzantin<span>
@@ -26,24 +26,23 @@
                 <img src="{{ asset('storage/'.$oeuvre->thumbnail_url) }}" alt="Miniature de l'oeuvre">
                 {{-- par <a href="?auteur={{$oeuvre->auteur}}">{{ $oeuvre->auteur }}</a>. --}}
             </a>
-            @php $i++ ;@endphp
+            @php $i++;@endphp
+
         @empty
             Aucune œuvres trouvées dans la salle !
         @endforelse
 
-
-    {{-- <p>Liste des portes vers les salles : </p>
-    <ul>
+    <ul class="SallesSuivantes">
         @forelse($sallessuivantes as $salle)
             <li>
-                <a href="{{ route('salle.show', $salle->id) }}">{{ $salle->nom }}</a>
+                <a href="{{ route('salle.show', $salle->id) }}" class="liensSalles">Salle {{ $salle->nom }} ></a>
             </li>
         @empty
             <li>
-                Aucune porte trouvée
+                <p class="liensSalles">Aucune porte trouvée</p>
             </li>
         @endforelse
-    </ul> --}}
+    </ul>
 
 @endsection
 
