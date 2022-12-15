@@ -18,7 +18,7 @@ class OeuvreController extends Controller
 
     public function create() {
         $salles = Salle::all();
-        return view('oeuvres.create' , ['salles'=>$salles]);
+        return view('oeuvres.create' , ['images'=>$salles]);
     }
 
     public function store(Request $request) {
@@ -27,7 +27,7 @@ class OeuvreController extends Controller
             'auteur' => 'required',
             'style' => 'required',
             'description' => 'required',
-            'salles' =>'required',
+            'images' =>'required',
             'img' => 'required',
             'thumbnail' => 'required',
             'x' => 'required',

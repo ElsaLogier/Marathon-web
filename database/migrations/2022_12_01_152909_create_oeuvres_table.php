@@ -26,7 +26,7 @@ return new class extends Migration
             $table->boolean('valide') ->default(true);
             $table->string('auteur', 100);
             $table->unsignedBigInteger('salle_id');
-            $table->foreign('salle_id')->references('id')->on('salles')->onDelete('cascade');
+            $table->foreign('salle_id')->references('id')->on('images')->onDelete('cascade');
         });
     }
 

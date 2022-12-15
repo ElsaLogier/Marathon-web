@@ -150,3 +150,4 @@ php artisan db:seed
 A partir de là, vous site doit être visible avec l'url : `http://172.31.146.106/~but22_groupeXX` avec `XX` votre numéro
 de groupe.
 
+.
