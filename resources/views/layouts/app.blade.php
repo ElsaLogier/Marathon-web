@@ -17,8 +17,10 @@
 <nav>
     <ul>
         @guest
+            @section('login')
             <li><a href="{{ route('login') }}">Login</a></li>
             <li><a href="{{ route('register') }}">Register</a></li>
+            @show
         @else
             <li> Bonjour {{ Auth::user()->name }}</li>
             @if (Auth::user())
@@ -35,9 +37,6 @@
     </ul>
 </nav>
 
-
-
 @yield('content')
-
 </body>
 </html>
