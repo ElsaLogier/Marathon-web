@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\OeuvreController;
@@ -18,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('accueil');
-})->name('accueil');
+Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 
 
 

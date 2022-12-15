@@ -39,7 +39,19 @@
     </div>
     <div class="welcome">Bienvenue au musée virtuel !</div>
     <div>Voici la description de l'exposition. Je suis une description vraiment sympa</div>
-    <button onclick="" >Vers la première salle</button>
+    <a href="{{ route('salle.show', $salleexpo->id) }}">Vers la salle d'expo</a>
+
+    <p>Liste des salles :</p>
+    <ul>
+        @forelse($salles as $salle)
+            <li>
+                <a href="{{ route('salle.show', $salle->id) }}">{{$salle->nom}}</a>
+            </li>
+        @empty
+            <li>La liste des salles est vide</li>
+        @endforelse
+    </ul>
+
 
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Notre Interview</a>
 </div>
