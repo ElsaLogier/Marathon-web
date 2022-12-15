@@ -195,21 +195,21 @@ li a {
     color: green;
 }
 
-/*#ban1:hover {*/
-/*    background: url('../../resources/images/thumbnails/illu_1.png') no-repeat;*/
-/*    background-size: cover;*/
-/*    color: rgba(245, 235, 224, 1);*/
-/*}*/
+#ban1:hover {
+    background: url('../images/thumbnails/illu_1.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
 
 #ban2 {
     color: darkgoldenrod;
 }
 
-/*#ban2:hover {*/
-/*    background: url('../../resources/images/thumbnails/illu_2.png') no-repeat;*/
-/*    background-size: cover;*/
-/*    color: rgba(245, 235, 224, 1);*/
-/*}*/
+#ban2:hover {
+    background: url('../images/thumbnails/illu_2.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
 
 #ban3 {
     color: blue;
