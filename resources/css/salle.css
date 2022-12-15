@@ -105,9 +105,8 @@ a:hover {
 }
 
 #eltC1 {
-    grid-area: a;
-    align-self: end;
     font-size: 25rem;
+    align-self: flex-end;
     padding-bottom: 0 !important;
     line-height: 75%;
 }
