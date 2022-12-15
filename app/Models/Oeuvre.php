@@ -18,7 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $coord_y
  * @property int $salle_id
  * @property int $auteur_id
- * @property-read \App\Models\Auteur $auteur
+ * @property string $auteur
+ * @property string $style
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Commentaire[] $commentaires
  * @property-read int|null $commentaires_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $likes
@@ -54,9 +55,9 @@ class Oeuvre extends Model {
         return $this->belongsToMany(User::class, 'likes');
     }
 
-    public function auteur() {
-        return $this->belongsTo(Auteur::class);
-    }
+//    public function auteur() {
+//        return $this->belongsTo(Auteur::class);
+//    }
 
     public function commentaires() {
         return $this->hasMany(Commentaire::class);
