@@ -13,19 +13,74 @@
     <div>Voici la description de l'exposition. Je suis une description vraiment sympa</div>
     <a href="{{ route('salle.show', $salleexpo->id) }}">Vers la salle d'expo</a>
 
-    <p>Liste des salles :</p>
-    <ul>
-        @forelse($salles as $salle)
-            <li>
-                <a href="{{ route('salle.show', $salle->id) }}">{{$salle->nom}}</a>
-            </li>
-        @empty
-            <li>La liste des salles est vide</li>
-        @endforelse
-    </ul>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
-
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Notre Interview</a>
+    <!-- Scripts -->
+    @vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js','resources/css/acc.css'])
+</head>
+<body>
+<div class="container">
+    <nav>
+        <ul>
+            @guest
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @else
+                @if (Auth::user())
+                    <li><a href="">Profil</a></li>
+                @endif
+                <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.
+          getElementById('logout-form').submit();">
+                        Logout
+                    </a></li>
+                <form id="logout-form" action="{{ route('logout') }}"
+                      method="POST" style="display: none;"> {{ csrf_field() }}
+                </form>
+            @endguest  </ul>
+    </nav>
+    <div class="section section-1" id="accueil">
+        <h2 id="test">Anomaly</h2>
+        <p class="type" style="--n:105">Bonjour et bienvenue à l'exposition Anomaly ! Nous sommes ravis de vous accueillir pour cette exploration de l'art généré par les intelligences artificielles. 
+            Le concept de l’exposition ? Incruster  des éléments de nos jours dans différents styles, complètement anachroniques ! Cette exposition met en lumière cinq mouvements artistiques emblématiques, en utilisant les dernières avancées en matière d'art génératif pour les reproduire dans notre époque. Nous espérons que vous apprécierez cette expérience unique et amusante !</p>
+    <div class="Rsalles">
+        <div class="start-div hover"><a href="/salle/1" id="start-btn">Commencer la visite</a></div>
+        <div class="libre-div hover"><a href="#salles" id="libre-btn">Visite libre</a></div>
+    </div>
+    </div>
+    <div class="section section-2" id="salles">
+        <div class="BanCourant" id="ban1">
+            <a href="/salle/1" class="banLink" id="Link1">
+            <img class="banimg" id="imgban1" src="images/s-l500.png"/>
+            <span class="courantBan"> Byzantin </span>
+            <span class="dateBan">476-1453</span>
+            <span class="nsalleBan">I</span></a>
+        </div>
+        <div class="BanCourant" id="ban2">
+            <a href="/salle/2" class="banLink" id="Link2">
+            <span class="courantBan"> Estampe<br>Japonaise </span>
+            <span class="dateBan">1603-1868</span>
+            <span class="nsalleBan">II</span></a>
+        </div>
+        <div class="BanCourant" id="ban3">
+            <a href="/salle/3" class="banLink" id="Link3" >
+            <span class="courantBan"> Impressionisme </span>
+            <span class="dateBan">1874-1886</span>
+            <span class="nsalleBan">III</span></a>
+        </div>
+        <div class="BanCourant" id="ban4">
+            <a href="/salle/4" class="banLink" id="Link4">
+            <span class="courantBan"> Cubisme </span>
+            <span class="dateBan">1874-1886</span>
+            <span class="nsalleBan">IV</span></a>
+        </div>
+        <div class="BanCourant" id="ban5">
+            <a href="/salle/5" class="banLink" id="Link5">
+            <span class="courantBan"> Pop Art </span>
+            <span class="dateBan">1874-1886</span>
+            <span class="nsalleBan">V</span></a>
+        </div>
+    </div>
 </div>
 @endsection
 
