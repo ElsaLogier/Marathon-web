@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('titre'){{ $oeuvre->nom }} @endsection
+
+@section('vite')@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js']) @endsection
+
 @section('content')
     <h2>{{$oeuvre->nom}}</h2>
     <img src="{{asset("storage/".$oeuvre->media_url)}}">
@@ -59,4 +63,6 @@
             <p>{!! $com->contenu !!}</p>
         @endif
     @endforeach
+    <button name="retour" >valider</button>
+    <button><a href="{{route('salle.show', $oeuvre->salle_id)}}">Retour à la salle</a></button>
 @endsection

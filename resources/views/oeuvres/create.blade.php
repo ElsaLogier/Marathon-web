@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('titre')Creation @endsection
+
+@section('vite')@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js']) @endsection
+
 @section('content')
     <form method="post" action="{{ route('oeuvres.store') }}" enctype="multipart/form-data">
         @csrf
