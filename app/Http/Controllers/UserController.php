@@ -14,7 +14,7 @@ class UserController extends Controller
         $user = Auth::user();
         $commentaires = $user->commentaires;
         $oeuvresLikees = $user->likes;
-        return view('compte', ['commentaires' => $commentaires, 'likes' => $oeuvresLikees]);
+        return view('home', ['commentaires' => $commentaires, 'likes' => $oeuvresLikees]);
     }
     public function upload(Request $request)
     {
@@ -22,7 +22,7 @@ class UserController extends Controller
         if ($request->hasFile('file') && $request->file('file')->isValid()) {
             $file = $request->file('file');
         } else {
-            return redirect()->route('compte');
+            return redirect()->route('home');
         }
         $nom = 'avatar';
         $now = time();
@@ -35,6 +35,6 @@ class UserController extends Controller
         }
         $user->avatar = 'images/avatars/'.$nom;
         $user->save();
-        return redirect()->route('compte');
+        return redirect()->route('home');
     }
 }

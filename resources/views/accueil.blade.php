@@ -4,17 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Scripts -->
-    @vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js','resources/css/acc.css'])
+    @vite(['resources/scss/app.scss','resources/js/app.js','resources/css/acc.css'])
 </head>
 <body>
-<div class="container">
     <nav>
         <ul>
             @guest
@@ -22,17 +20,18 @@
                 <li><a href="{{ route('register') }}">Register</a></li>
             @else
                 @if (Auth::user())
-                    <li><a href="">Profil</a></li>
+                    <li><a href="/home">Profil</a></li>
                 @endif
                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.
           getElementById('logout-form').submit();">
-                        Logout
+                        Se déconnecter
                     </a></li>
                 <form id="logout-form" action="{{ route('logout') }}"
                       method="POST" style="display: none;"> {{ csrf_field() }}
                 </form>
             @endguest  </ul>
     </nav>
+
     <div class="section section-1" id="accueil">
         <h2 id="test">Anomaly</h2>
         <p class="type" style="--n:105">Bonjour et bienvenue à l'exposition Anomaly ! Nous sommes ravis de vous accueillir pour cette exploration de l'art généré par les intelligences artificielles. 
@@ -76,5 +75,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

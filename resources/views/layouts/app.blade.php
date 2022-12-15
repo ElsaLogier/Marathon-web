@@ -11,31 +11,35 @@
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Scripts -->
-    @vite(['resources/scss/app.scss','ressources/css/salles.css','resources/css/app.css','resources/js/app.js'])
+    @yield('viteLine')
 </head>
 <body>
-<nav>
-    <ul>
-        @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
-        @else
-            <li> Bonjour {{ Auth::user()->name }}</li>
-            @if (Auth::user())
-                <li><a href="#">Des liens spécifiques pour utilisateurs connectés..</a></li>
-            @endif
-            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.
-          getElementById('logout-form').submit();">
-                    Logout
-                </a></li>
-            <form id="logout-form" action="{{ route('logout') }}"
-                  method="POST" style="display: none;"> {{ csrf_field() }}
-            </form>
-        @endguest
-    </ul>
-</nav>
-
-
+    <div class="nav-toggle">
+        <div class="nav-toggle-bar"></div>
+      </div>
+      
+      <nav id="nav" class="nav">
+        <ul>
+            <ul>
+                <li><a href="{{ route('accueil') }}">Accueil</a></li>
+                @guest
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
+                @else
+                    <li> Bonjour {{ Auth::user()->name }}</li>
+                    @if (Auth::user())
+                        <li><a href="{{ route('home') }}">Lien vers le compte</a></li>
+                    @endif
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.
+                  getElementById('logout-form').submit();">
+                            Logout
+                        </a></li>
+                    <form id="logout-form" action="{{ route('logout') }}"
+                          method="POST" style="display: none;"> {{ csrf_field() }}
+                    </form>
+                @endguest
+            </ul>
+      </nav>
 
 @yield('content')
 
