@@ -1,14 +1,17 @@
 @extends('layouts.app')
 
+@section('viteLine')
+@vite(['resources/scss/app.scss','ressources/css/salles.css','resources/css/app.css','resources/js/app.js','resources/js/burger.js','resources/css/salle.css'])
+@endsection
+
 @section('content')
-    <h2>{{$oeuvre->nom}}</h2>
-    <img src="{{asset("storage/".$oeuvre->media_url)}}">
-    <p>par: {{$oeuvre->auteur}}&nbsp;
-    </p>
-    <p>liké {{count($oeuvre->likes)}} fois.</p>
+<section class="contenu">
+<div class="oeuvre-infos">
+    <div class="img_container">
+    <img src="{{asset("storage/".$oeuvre->media_url)}}"></img>
+    <div class="like">
     @auth
         @if(Auth::user()->likes->contains($oeuvre))
-            <b><p>Vous avez liké cette oeuvre </p></b>
             <form method="post" action=" {{ route('likes.destroy', $oeuvre->id) }}">
                 @csrf
                 @method('DELETE')
@@ -21,24 +24,18 @@
             </form>
         @endif
     @endauth
+    <p>&nbsp;{{count($oeuvre->likes)}} like(s)</p>
+    </div>
+    </div>
+    <h2>{{$oeuvre->nom}}</h2>
+    <p>Image proposée par {{$oeuvre->auteur}}.&nbsp;</p>
+</div>
 
-    {!! $oeuvre->description !!}
+<div class="commentaires-desc">
+    <h2>Commentaires</h2>
+    <div class="fentre-commentaires">
 
-    <form method="post" action="{{ route('commentaires.store') }}">
-        @csrf
-        <div>
-            <label for="titre">titre</label>
-            <input type="text" name="titre" placeholder="titre">
-        </div>
-        <div>
-            <label for="titre">contenu</label>
-            <textarea rows="10" cols="20" name="contenu"></textarea>
-        </div>
-        <button name="oeuvre" value="{{$oeuvre->id}}" type="submit">valider</button>
-    </form>
-
-
-    @foreach($oeuvre->commentaires as $com)
+@foreach($oeuvre->commentaires as $com)
         @if($com->valide || (Auth::user() != null && Auth::user()->admin))
             <hr>
             <h3>{{$com->titre}}
@@ -59,4 +56,24 @@
             <p>{!! $com->contenu !!}</p>
         @endif
     @endforeach
+
+
+   
+</div>
+
+<form method="post" action="{{ route('commentaires.store') }}">
+        @csrf
+        <div>
+            <input type="text" name="titre" placeholder="Titre de votre commentaire">
+        </div>
+        <div>
+            <textarea rows="1" cols="20" name="contenu" placeholder="Votre commentaire"></textarea>
+        </div>
+        <button name="oeuvre" value="{{$oeuvre->id}}" type="submit">valider</button>
+    </form>
+<div class="desc">  {!! $oeuvre->description !!}</div>
+
+
+</div>
+</section>
 @endsection
