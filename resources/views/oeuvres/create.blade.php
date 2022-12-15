@@ -23,14 +23,6 @@
             <label for="description">Description :</label>
             <textarea rows="10" cols="20" name="description"></textarea>
         </div>
-        <div>
-            <select name='salles'>
-                @foreach($salles as $salle)
-                    <option value="{{$salle->id}}">{{$salle->nom}}</option>
-                @endforeach
-
-            </select>
-        </div>
             <div>
             <label for="img">Image : </label>
             <input type="file" name="img" id="img">

@@ -27,7 +27,6 @@ class OeuvreController extends Controller
             'auteur' => 'required',
             'style' => 'required',
             'description' => 'required',
-            'salles' =>'required',
             'img' => 'required',
             'thumbnail' => 'required',
             'x' => 'required',
@@ -39,13 +38,11 @@ class OeuvreController extends Controller
         if ($request->hasFile('img') && $request->file('img')->isValid()) {
             $img = $request->file('img');
         } else {
-            // TODO TRUCS
             return redirect()->route('oeuvres.show',1 );
         }
         if ($request->hasFile('thumbnail') && $request->file('thumbnail')->isValid()) {
             $thb = $request->file('thumbnail');
         } else {
-            // TODO TRUCS
             return redirect()->route('oeuvres.show',2);
         }
 
@@ -70,7 +67,7 @@ class OeuvreController extends Controller
         $oeuvre->coord_x = $request->x;
         $oeuvre->coord_y = $request->y;
         $oeuvre->auteur = $request->auteur;
-        $oeuvre->salle_id = $request->salles;
+        $oeuvre->salle_id = 6;
         $oeuvre->date_creation = $request->date;
 
         $oeuvre->save();
