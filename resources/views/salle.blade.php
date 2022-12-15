@@ -17,7 +17,9 @@
     <ul>
         @forelse($oeuvres as $oeuvre)
             <li>
-                {{ $oeuvre->nom }} par <a href="?auteur={{$oeuvre->auteur}}">{{ $oeuvre->auteur }}</a>.
+                <a href="{{route('oeuvres.show', $oeuvre->id)}}">{{ $oeuvre->nom }}</a>
+                par <a href="?auteur={{$oeuvre->auteur}}">{{ $oeuvre->auteur }}</a>.
+                <img src="{{ asset('storage/'.$oeuvre->thumbnail_url) }}" alt="Miniature de l'oeuvre">
                 <ul>
                     <li>tag:
                         @foreach($oeuvre->tags as $tag)
