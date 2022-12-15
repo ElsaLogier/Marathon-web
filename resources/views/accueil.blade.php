@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+@section('titre')Accueil @endsection
+
+@section('vite')@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js']) @endsection
+
+@section('content')
+<div class="container">
+    <div class="illustration">
+        <img class="oeuvre" src="{{asset('storage/images/oeuvres/oeuvre-5.png')}}" alt="">
+    </div>
+    <div class="welcome">Bienvenue au musée virtuel !</div>
+    <div>Voici la description de l'exposition. Je suis une description vraiment sympa</div>
+    <a href="{{ route('salle.show', $salleexpo->id) }}">Vers la salle d'expo</a>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
