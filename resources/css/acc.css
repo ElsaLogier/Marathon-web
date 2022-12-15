@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'crake_regularregular';
+    src: url('fonts/crake_regular-webfont.woff2') format('woff2'),
+        url('fonts/crake_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'azo_sans';
+    src: url('fonts/AzoSans-Light.woff2') format('woff2'),
+        url('fonts/AzoSans-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'blushing_rose';
+    src: url('fonts/blushing_rose-webfont.woff2') format('woff2'),
+        url('fonts/blushing_rose-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: rgba(245, 235, 224, 1) !important;
+
+}
+
+html,
+body,
+.section {
+    height: 100%;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.section-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    display: flex;
+    width: 90vw;
+    justify-content:space-evenly;
+
+}
+
+li {
+    list-style: none;
+    color: #000;
+}
+
+li a {
+    color: #000;
+    text-decoration: none;
+    font-family: 'crake_regularregular';
+    font-size: 2rem;
+}
+
+.section-1 header a {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: 'crake_regularregular';
+    color: black;
+    margin-left: 1rem;
+    transition: .5s;
+}
+
+.section-1 p {
+    max-width: 50%;
+    font-family: 'Cousine', monospace;
+}
+
+#accueil h2 {
+    font-size: 12.5rem;
+    font-family: 'crake_regularregular';
+    transition: 1.5s;
+    line-height: .5;
+}
+
+
+.Rsalles div {
+    max-width: 40%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.start-div {
+    background-color: rgba(245, 235, 224, 1);
+    border: solid 2px #6D5E4D
+}
+
+#start-btn {
+    color: #6D5E4D;
+}
+
+.libre-div {
+    background-color: #6D5E4D;
+}
+
+#libre-btn {
+    color: rgba(245, 235, 224, 1)
+}
+
+.Rsalles a {
+    font-size: 2.5rem;
+    text-decoration: none;
+    padding: 0 1.5rem;
+}
+
+.Rsalles {
+    display: flex;
+    width: 75vh;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+.type {
+    color: #0000;
+    background:
+        linear-gradient(-90deg, #000 5px, #0000 0) 10px 0,
+        linear-gradient(#000 0 0) 0 0;
+    background-size: calc(var(--n)*1ch) 200%;
+    -webkit-background-clip: padding-box, text;
+    background-clip: padding-box, text;
+    background-repeat: no-repeat;
+    animation:
+        b .7s infinite steps(1),
+        t calc(var(--n)*.05s) steps(var(--n)) forwards;
+}
+
+@keyframes t {
+    from {
+        background-size: 0 200%
+    }
+}
+
+@keyframes b {
+    50% {
+        background-position: 0 -100%, 0 0
+    }
+}
+
+
+.section2 {
+    display: grid;
+    grid-auto-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.dateBan {
+    font-size: 2.5rem;
+    font-family: 'azo_sans';
+}
+
+.courantBan {
+    font-family: 'crake_regularregular';
+    font-size: 3rem;
+}
+
+.nsalleBan {
+    font-family: 'crake_regularregular';
+    font-size: 20rem;
+}
+
+#ban1,
+#ban2,
+#ban3,
+#ban4,
+#ban5 {
+    height: 100vh;
+    transition: .5s;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#ban1 {
+    color: green;
+}
+
+#ban1:hover {
+    background: url('../../resources/images/thumbnails/illu_1.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
+
+#ban2 {
+    color: darkgoldenrod;
+}
+
+#ban2:hover {
+    background: url('../../resources/images/thumbnails/illu_2.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
+
+#ban3 {
+    color: blue;
+}
+
+#ban3:hover {
+    background: url('../../resources/images/thumbnails/illu_3.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
+
+#ban4 {
+    color: purple;
+}
+
+#ban4:hover {
+    background: url('../../resources/images/thumbnails/illu_4.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
+
+#ban5 {
+    color: maroon;
+}
+
+#ban5:hover {
+    background: url('../../resources/images/thumbnails/illu_5.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
+
+.banimg {
+    display: none;
+    position: relative;
+    top: 0;
+    height: 100%;
+}
+
+.banLink {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.banLink:hover {
+    color: rgba(245, 235, 224, 1) !important;
+}
+
+#Link1 {
+    color: #14077b;
+}
+
+#Link2 {
+    color: #e28fce;
+}
+
+#Link3 {
+    color: #287117;
+}
+
+#Link4 {
+    color: #1fbaba;
+}
+
+#Link5 {
+    color: #d10d0d;
+}
