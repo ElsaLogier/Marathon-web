@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\OeuvreController;
@@ -18,21 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('accueil');
-})->name('accueil');
+Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 
 
 
-Route::get('/home', function () {
-    return view('home');
-})->middleware(['auth'])->name('home');
+Route::get('/home', [UserController::class, 'index'])->middleware(['auth'])->name('home');
+Route::post('/home', [UserController::class, 'upload'])->middleware(['auth'])->name('home.upload');
 
 Route::resource('/oeuvres', OeuvreController::class);
 Route::resource('/commentaires', CommentaireController::class)->middleware(['auth', 'verified']);
 Route::resource('/likes', LikeController::class);
 Route::put('/commentaires/valider/{id}', [CommentaireController::class, 'valider'])->name('commentaires.valider');
 
-Route::get('/compte', [UserController::class, 'index'])->middleware(['auth'])->name('compte');
-Route::post('/compte', [UserController::class, 'upload'])->middleware(['auth'])->name('compte.upload');
 Route::get('/salle/{id}', [SalleController::class, 'show'])->whereNumber('id')->name('salle.show');
