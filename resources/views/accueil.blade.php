@@ -6,6 +6,37 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/scss/app.scss', 'resources/css/acc.css','resources/js/app.js'])
     <title>Accueil</title>
+    <style>
+        #ban1:hover {
+            background: url({{ asset('storage'.$salle[0]->plan_url) }}) no-repeat;
+            background-size: cover;
+            color: rgba(245, 235, 224, 1);
+        }
+
+        #ban2:hover {
+            background: url({{ asset('storage'.$salle[1]->plan_url) }}) no-repeat;
+            background-size: cover;
+            color: rgba(245, 235, 224, 1);
+        }
+
+        #ban3:hover {
+            background: url({{ asset('storage'.$salle[2]->plan_url) }}) no-repeat;
+            background-size: cover;
+            color: rgba(245, 235, 224, 1);
+        }
+
+        #ban4:hover {
+            background: url({{ asset('storage'.$salle[3]->plan_url) }}) no-repeat;
+            background-size: cover;
+            color: rgba(245, 235, 224, 1);
+        }
+
+        #ban5:hover {
+            background: url({{ asset('storage'.$salle[4]->plan_url) }}) no-repeat;
+            background-size: cover;
+            color: rgba(245, 235, 224, 1);
+        }
+    </style>
 
     <body>
         <nav>
@@ -38,32 +69,32 @@
         </div>
         <div class="section section-2" id="salles">
             <div class="BanCourant" id="ban1">
-                <a href="/salle/1" class="banLink" id="Link1">
-                <img class="banimg" id="imgban1" src="images/s-l500.png"/>
+                <a href="{{ route('salle.show', 1) }}" class="banLink" id="Link1">
+                <img class="banimg" id="imgban1" src=" {{ asset('storage/images/s-l500.png') }}"/>
                 <span class="courantBan"> Byzantin </span>
                 <span class="dateBan">476-1453</span>
                 <span class="nsalleBan">I</span></a>
             </div>
             <div class="BanCourant" id="ban2">
-                <a href="/salle/2" class="banLink" id="Link2">
+                <a href="{{ route('salle.show', 2) }}" class="banLink" id="Link2">
                 <span class="courantBan"> Estampe<br>Japonaise </span>
                 <span class="dateBan">1603-1868</span>
                 <span class="nsalleBan">II</span></a>
             </div>
             <div class="BanCourant" id="ban3">
-                <a href="/salle/3" class="banLink" id="Link3" >
+                <a href="{{ route('salle.show', 3) }}" class="banLink" id="Link3" >
                 <span class="courantBan"> Impressionisme </span>
                 <span class="dateBan">1874-1886</span>
                 <span class="nsalleBan">III</span></a>
             </div>
             <div class="BanCourant" id="ban4">
-                <a href="/salle/4" class="banLink" id="Link4">
+                <a href="{{ route('salle.show', 4) }}" class="banLink" id="Link4">
                 <span class="courantBan"> Cubisme </span>
                 <span class="dateBan">1874-1886</span>
                 <span class="nsalleBan">IV</span></a>
             </div>
             <div class="BanCourant" id="ban5">
-                <a href="/salle/5" class="banLink" id="Link5">
+                <a href="{{ route('salle.show', 5) }}" class="banLink" id="Link5">
                 <span class="courantBan"> Pop Art </span>
                 <span class="dateBan">1874-1886</span>
                 <span class="nsalleBan">V</span></a>
