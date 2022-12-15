@@ -11,13 +11,6 @@
 
 @section('content')
 <div class="container">
-    <div class="illustration">
-        <img class="oeuvre" src="{{asset('storage/images/oeuvres/oeuvre-5.png')}}" alt="">
-    </div>
-    <div class="welcome">Bienvenue au musée virtuel !</div>
-    <div>Voici la description de l'exposition. Je suis une description vraiment sympa</div>
-    <a href="{{ route('salle.show', $salleexpo->id) }}">Vers la salle d'expo</a>
-
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
