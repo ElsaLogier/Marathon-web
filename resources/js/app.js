@@ -1,5 +1,3 @@
-import './bootstrap';
-
 function scrollHorizontally(e) {
     const content=document.getElementById('content');
     e = window.event || e;

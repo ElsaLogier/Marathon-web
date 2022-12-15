@@ -36,6 +36,7 @@
 }
 .oeuvre-infos h2{
     margin-top:5rem;
+    font-family: 'crake_regularregular';
 }
 .img_container {
     margin: 0 20%;
@@ -96,4 +97,18 @@ button[name="oeuvre"]{
 
 .contenu{
     margin-top:5rem;
+}
+
+.commentaires-desc h2{
+    font-family: 'crake_regularregular';
+}
+
+.fentre-commentaires h3{
+    font-family: 'crake_regularregular';
+
+}
+
+.fentre-commentaires p{
+    font-size: .9rem;
+    font-family: 'azo_sans'
 }

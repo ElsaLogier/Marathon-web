@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('viteLine')
-@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/app.js','resources/js/burger.js','resources/css/oeuvre.css'])
+@vite(['resources/scss/app.scss','resources/css/app.css','resources/js/burger.js','resources/css/oeuvre.css'])
 @endsection
 
 @section('content')
