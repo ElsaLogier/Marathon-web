@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('viteLine')@vite(['resources/css/app.css','resources/css/login.css']) @endsection
 
