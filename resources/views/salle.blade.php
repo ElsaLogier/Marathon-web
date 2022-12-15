@@ -17,7 +17,15 @@
     <ul>
         @forelse($oeuvres as $oeuvre)
             <li>
-                {{ $oeuvre->nom }} par {{ $oeuvre->auteur }}.
+                <a href="{{route('oeuvres.show', $oeuvre->id)}}">{{ $oeuvre->nom }}</a>
+                par <a href="?auteur={{$oeuvre->auteur}}">{{ $oeuvre->auteur }}</a>.
+                <ul>
+                    <li>tag:
+                        @foreach($oeuvre->tags as $tag)
+                            <a href="?tag={{ $tag->intitule }}">{{$tag->intitule}},&nbsp;</a>
+                        @endforeach
+                    </li>
+                </ul>
             </li>
         @empty
             <li>
