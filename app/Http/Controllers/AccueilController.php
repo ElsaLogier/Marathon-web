@@ -11,6 +11,6 @@ class AccueilController extends Controller
     {
         $salles = Salle::all();
         $salleExpo = Salle::where('entree', 1)->first();
-        return view('accueil', ['salles' => $salles, 'salleexpo' => $salleExpo]);
+        return view('accueil', ['images' => $salles, 'salleexpo' => $salleExpo]);
     }
 }

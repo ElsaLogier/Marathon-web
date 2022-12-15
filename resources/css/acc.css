@@ -215,31 +215,31 @@ li a {
     color: blue;
 }
 
-/*#ban3:hover {*/
-/*    background: url('../../resources/images/thumbnails/illu_3.png') no-repeat;*/
-/*    background-size: cover;*/
-/*    color: rgba(245, 235, 224, 1);*/
-/*}*/
+#ban3:hover {
+    background: url('../images/thumbnails/illu_3.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
 
 #ban4 {
     color: purple;
 }
 
-/*#ban4:hover {*/
-/*    background: url('../../resources/images/thumbnails/illu_4.png') no-repeat;*/
-/*    background-size: cover;*/
-/*    color: rgba(245, 235, 224, 1);*/
-/*}*/
+#ban4:hover {
+    background: url('../images/thumbnails/illu_4.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
 
 #ban5 {
     color: maroon;
 }
 
-/*#ban5:hover {*/
-/*    background: url('../../resources/images/thumbnails/illu_5.png') no-repeat;*/
-/*    background-size: cover;*/
-/*    color: rgba(245, 235, 224, 1);*/
-/*}*/
+#ban5:hover {
+    background: url('../images/thumbnails/illu_5.png') no-repeat;
+    background-size: cover;
+    color: rgba(245, 235, 224, 1);
+}
 
 .banimg {
     display: none;
