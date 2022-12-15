@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'crake_regularregular';
+  src: url('../../public/storage/fonts/crake_regular-webfont.woff2') format('woff2'),
+       url('../../public/storage/fonts/crake_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'azo_sans';
+  src: url('../../public/storage/fonts/AzoSans-Light.woff2') format('woff2'),
+       url('../../public/storage/fonts/AzoSans-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin:0;
+  padding:0;
+  background: rgba(245,235,224,1) !important;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register{
+  display: flex;
+  align-items: center;
+}
+
+h1{
+  font-family: 'crake_regularregular';
+  position: relative;
+}
+
+h3 {
+  font-family: 'crake_regularregular';
+}
+
+input {
+  font-family: 'azo_sans';
+}
+
+form {
+  position: relative;
+}
+
+.form-submit input {
+  position: absolute;
+  right: 0;
+}
+
+.form-border {
+  display: flex;
+  flex-direction: column;
+}
+
+.redirection {
+  margin-top: 10vh;
+}
+
+.redirection a {
+  text-decoration: line;
+  color: #B79B8A;
+  bottom: 0;
+}
+
+input[type=email], input[type=password], input[type=text] {
+  border: none;
+  background-color: #F0E2D3;
+  width: 15rem;
+  border-radius: 18px;
+  margin: 1vh;
+  padding: 1vh;
+}
+
+input[type=submit] {
+  border: none;
+  background-color: #B79B8A;
+  border-radius: 18px;
+  margin: 1vh;
+  padding: 1vh;
+  font-family: 'crake_regularregular';
+  font-size: 2vh;
+}
+
+.return{
+  position: absolute;
+  left: 3%;
+  top: 3%;
+  font-family: 'crake_regularregular';
+  text-decoration: none;
+  color: #B79B8A;
+  font-size: 6vh;
+}

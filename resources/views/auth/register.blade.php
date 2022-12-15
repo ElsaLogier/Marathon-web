@@ -1,47 +1,49 @@
-@extends('layouts.app')
+@extends('layouts.app2')
+
+@section('viteLine')@vite(['resources/css/app.css','resources/css/register.css']) @endsection
+
 
 @section('content')
 
 <div>
     @include("_errors")
-    <form action="{{route('register')}}" method="post">
-        @csrf
-        <div>
-            <h1>Création accès musée</h1>
-            <div>
-                Si vous avez déjà un compte, <a href="{{route('login')}}">connectez-vous</a>.
-            </div>
-        </div>
-        <div>
-            <label for="name">Nom</label>
-            <input type="text" name="name" id="name">
-        </div>
-
-        <!-- Email Address -->
-        <div>
-            <label for="email">Adresse mail</label>
-            <input type="email" name="email" id="email">
-        </div>
-
-
-        <!-- Password -->
-        <div>
-            <label for="pwd">Mot de passe</label>
-            <input type="password" name="password" id="pwd">
-        </div>
-
-        <!-- Confirm Password -->
-        <div>
-            <label for="conf_pwd">Confirmation mot de passe</label>
-            <input type="password" name="password_confirmation" id="conf_pwd">
-        </div>
-        <div>
-            <input type="submit" value="Enregistrement">
-        </div>
-    </form>
     <div>
-        <a href="{{route('accueil')}}">Retour à la page principale</a>
+        <a class="return" href="{{route('accueil')}}">Retour à la page d'accueil</a>
+    </div>
+    <div class="register">
+        <h1>Register</h1>
+        <form action="{{route('register')}}" method="post" class="form-example">
+            @csrf
+            <div>
+                <input type="text" name="name" id="name" placeholder="Nom d'utilisateur">
+            </div>
+
+            <!-- Email Address -->
+            <div>
+                <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+
+
+            <!-- Password -->
+            <div>
+                <input type="password" name="password" id="pwd" placeholder="Mot de passe">
+            </div>
+
+            <!-- Confirm Password -->
+            <div>
+                <input type="password" name="password_confirmation" id="conf_pwd" placeholder="Confirmer le mot de passe">
+            </div>
+            <div class="form-submit">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
     </div>
 </div>
+<div class="redirection"><br />
+    <h3>Déjà inscrit ? <a href="{{route('login')}}">Cliquez ici !</a></h3>
+</div>
 
+@endsection
+
+@section('login')
 @endsection
