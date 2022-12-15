@@ -38,7 +38,7 @@
         <p class="type" style="--n:105">Bonjour et bienvenue à l'exposition Anomaly ! Nous sommes ravis de vous accueillir pour cette exploration de l'art généré par les intelligences artificielles.
             Le concept de l’exposition ? Incruster  des éléments de nos jours dans différents styles, complètement anachroniques ! Cette exposition met en lumière cinq mouvements artistiques emblématiques, en utilisant les dernières avancées en matière d'art génératif pour les reproduire dans notre époque. Nous espérons que vous apprécierez cette expérience unique et amusante !</p>
     <div class="Rsalles">
-        <div class="start-div hover"><a href="/salle/1" id="start-btn">Commencer la visite</a></div>
+        <div class="start-div hover"><a href="{{ route('salle.show', 1) }}" id="start-btn">Commencer la visite</a></div>
         <div class="libre-div hover"><a href="#salles" id="libre-btn">Visite libre</a></div>
     </div>
     </div>
