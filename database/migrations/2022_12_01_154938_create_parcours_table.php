@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('parcours', function (Blueprint $table) {
             $table->unsignedBigInteger('salle_courante_id');
             $table->unsignedBigInteger('salle_suivante_id');
-            $table->foreign('salle_courante_id')->references('id')->on('salles')->onDelete('cascade');
-            $table->foreign('salle_suivante_id')->references('id')->on('salles')->onDelete('cascade');
+            $table->foreign('salle_courante_id')->references('id')->on('images')->onDelete('cascade');
+            $table->foreign('salle_suivante_id')->references('id')->on('images')->onDelete('cascade');
         });
     }
 

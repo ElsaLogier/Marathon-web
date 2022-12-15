@@ -31,7 +31,7 @@
         @endforelse
 
 
-    {{-- <p>Liste des portes vers les salles : </p>
+    {{-- <p>Liste des portes vers les images : </p>
     <ul>
         @forelse($sallessuivantes as $salle)
             <li>
